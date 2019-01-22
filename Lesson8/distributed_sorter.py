@@ -45,7 +45,7 @@ if __name__ == '__main__':
 		split_data[i] = np.fromiter(f, dtype = np.int32).tolist()
 	'''
 	这里之所以使用了fromiter+tolist函数将iterable转为list是因为数字类型为np.int32，该类型不能序列化为json格式。
-	如果只用：split_data[i] = list(f)，数字格式仍为np.int32，在调用函数call...时无法转为json格式。 
+	如果只用：split_data[i] = list(f)，数字格式仍为np.int32，在调用函数call_slave_...时无法转为json格式。 
 	'''
 	
 	slaves_config = config.slaves()
