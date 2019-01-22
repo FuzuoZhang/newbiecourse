@@ -36,13 +36,13 @@ void savedata(const char * filnm,int data[],int n){
     return ;
 }
 
-int verify_sort(int a[], int n){
+int is_sorted(int a[], int n){
     for(int i=0 ;i<n-1; i++){
         if(a[i]>a[a+1]){
-            return 1
+            return 0
         }
     }
-    return 0
+    return 1
 }
 
 int main()
@@ -58,8 +58,8 @@ int main()
     savedata("./data.txt",num,n);
     QuickSort(num,0,n-1);
 
-    int verifymark = verify_sort(num,n);
-    if(verifymark == 1){
+    int verifymark = is_sorted(num,n);
+    if(verifymark == 0){
         printf("not sorted.\n")
     }
     else{
